@@ -1,0 +1,24 @@
+alias av6='conda activate pt_rocm6'
+alias da='conda deactivate'
+alias b='cd ..'
+alias bb='cd ../..'
+alias sc='source ~/.bashrc'
+alias gc='gvim ~/.bashrc'
+alias g='gvim'
+alias h='history'
+cd_ll()
+{
+  # 使用‘\’可以调用原始命令
+  \cd $1
+  ls
+  # ll
+}
+# 设置别名
+alias cd='cd_ll'
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
+
+export ROCM_PATH=/opt/rocm
+export HIP_PATH=/opt/rocm/hip
+
+alias proxy='export all_proxy=http://192.168.0.103:7897' # v2ray的端口具体端口根据自己的代理更改
+alias unproxy='unset all_proxy'
